@@ -54,36 +54,36 @@ namespace LunchMenu
 
 
 
-            public void AddMenu()
-        {
-            UpdateEntry(GetName(0), "Veg Meals", 60, 0);
-            UpdateEntry(GetName(0), "Chapathi", 30, 0);
-            UpdateEntry(GetName(0), "Mini Meals", 50, 0);
-            UpdateEntry(GetName(0), "Paratha", 40, 0);
-            UpdateEntry(GetName(0), "Veg Kurma", 20, 0);
-            UpdateEntry(GetName(0), "Gobi Fry", 50, 0);
-            UpdateEntry(GetName(0), "Kadai Vegetables", 40, 0);
-            UpdateEntry(GetName(0), "Soup of The Day", 40, 0);
-            UpdateEntry(GetName(0), "Fresh Juice", 40, 0);
-            UpdateEntry(GetName(1), "Non Veg Meals", 90, 0);
-            UpdateEntry(GetName(1), "Chapathi", 80, 0);
-            UpdateEntry(GetName(1), "Mini Meals", 90, 0);
-            UpdateEntry(GetName(1), "Paratha", 100, 0);
-            UpdateEntry(GetName(1), "Chicken Masala", 90, 0);
-            UpdateEntry(GetName(1), "Chicken 65", 90, 0);
-            UpdateEntry(GetName(1), "Kadai Chicken", 100, 0);
-            UpdateEntry(GetName(1), "Soup of the Day", 40, 0);
-            UpdateEntry(GetName(1), "Fresh Juice", 40, 0);
-            UpdateEntry(GetName(2), "Protien Shake", 140, 0);
-            UpdateEntry(GetName(2), "Egg White Omlet", 40, 0);
-            UpdateEntry(GetName(2), "Oatmel", 40, 0);
-            UpdateEntry(GetName(2), "Sugar Free IceCream", 50, 0);
-            UpdateEntry(GetName(2), "Fresh Juice", 40, 0);
-            UpdateEntry(GetName(2), "Veg Sandwich", 60, 0);
-            UpdateEntry(GetName(2), "Chicken Sandwich", 80, 0);
-            UpdateEntry(GetName(2), "Veg Salad", 90, 0);
-            UpdateEntry(GetName(2), "Chicken Salad", 140, 0);
-        }
+        //    public void AddMenu()
+        //{
+        //    UpdateEntry(GetName(0), "Veg Meals", 60, 0);
+        //    UpdateEntry(GetName(0), "Chapathi", 30, 0);
+        //    UpdateEntry(GetName(0), "Mini Meals", 50, 0);
+        //    UpdateEntry(GetName(0), "Paratha", 40, 0);
+        //    UpdateEntry(GetName(0), "Veg Kurma", 20, 0);
+        //    UpdateEntry(GetName(0), "Gobi Fry", 50, 0);
+        //    UpdateEntry(GetName(0), "Kadai Vegetables", 40, 0);
+        //    UpdateEntry(GetName(0), "Soup of The Day", 40, 0);
+        //    UpdateEntry(GetName(0), "Fresh Juice", 40, 0);
+        //    UpdateEntry(GetName(1), "Non Veg Meals", 90, 0);
+        //    UpdateEntry(GetName(1), "Chapathi", 80, 0);
+        //    UpdateEntry(GetName(1), "Mini Meals", 90, 0);
+        //    UpdateEntry(GetName(1), "Paratha", 100, 0);
+        //    UpdateEntry(GetName(1), "Chicken Masala", 90, 0);
+        //    UpdateEntry(GetName(1), "Chicken 65", 90, 0);
+        //    UpdateEntry(GetName(1), "Kadai Chicken", 100, 0);
+        //    UpdateEntry(GetName(1), "Soup of the Day", 40, 0);
+        //    UpdateEntry(GetName(1), "Fresh Juice", 40, 0);
+        //    UpdateEntry(GetName(2), "Protien Shake", 140, 0);
+        //    UpdateEntry(GetName(2), "Egg White Omlet", 40, 0);
+        //    UpdateEntry(GetName(2), "Oatmel", 40, 0);
+        //    UpdateEntry(GetName(2), "Sugar Free IceCream", 50, 0);
+        //    UpdateEntry(GetName(2), "Fresh Juice", 40, 0);
+        //    UpdateEntry(GetName(2), "Veg Sandwich", 60, 0);
+        //    UpdateEntry(GetName(2), "Chicken Sandwich", 80, 0);
+        //    UpdateEntry(GetName(2), "Veg Salad", 90, 0);
+        //    UpdateEntry(GetName(2), "Chicken Salad", 140, 0);
+        //}
 
         private static string GetName(int number)
         {
