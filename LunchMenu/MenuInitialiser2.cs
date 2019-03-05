@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Xml;
+using System.Xml.Linq;
 
 namespace LunchMenu
 {
@@ -13,7 +16,45 @@ namespace LunchMenu
         public static Item2[] VegMenu { get; set; }
         public static Item2[] NonVegMenu { get; set; }
         public static Item2[] HealthyMenu { get; set; }
-        public void AddMenu()
+        public void ReadItems()
+        {
+            XmlReader xmlReader = XmlReader.Create(@".\Menu.xml");
+            while (xmlReader.Read())
+            {
+
+                if ((xmlReader.NodeType == XmlNodeType.Element) && (xmlReader.Name == "dish"))
+                {
+                    int type;
+                    string menuname=null;
+                    string name=null;
+                    int price=0;
+                    int count=0;
+
+                    if (xmlReader.HasAttributes)
+                    {
+                        type =int.Parse(xmlReader.GetAttribute("menutype").Trim());
+                        menuname = GetName(type);
+                        name = xmlReader.GetAttribute("Name").Trim();
+                        price = int.Parse(xmlReader.GetAttribute("Price").Trim());
+                        count = 0;
+                        UpdateEntry(menuname, name, price, count);
+
+                    }
+                }
+            }
+        }
+    
+   
+
+
+
+
+
+
+
+
+
+            public void AddMenu()
         {
             UpdateEntry(GetName(0), "Veg Meals", 60, 0);
             UpdateEntry(GetName(0), "Chapathi", 30, 0);

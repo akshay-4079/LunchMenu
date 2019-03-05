@@ -11,7 +11,7 @@ namespace LunchMenu
         public static void Main(string[] args)
         {
             MenuInitialiser2 menu = new MenuInitialiser2();
-            menu.AddMenu();
+            menu.ReadItems();
             menu.CreateMenu();
             ShowMenu();
         }

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+// Enter the values in the following format
+// The valuesfor for menu type is 0 for veg,1 for NonVeg and 2 for Healthy
+<Menu>
+<dish>	<menutype>	0	</menutype>	<Name>	Veg Meals	</Name>	<Price>	60	</Price>	<Count>	0	</Count>	</dish>
+<dish>	<menutype>	0	</menutype>	<Name>	Chapathi	</Name>	<Price>	30	</Price>	<Count>	0	</Count>	</dish>
+<dish>	<menutype>	0	</menutype>	<Name>	Mini Meals	</Name>	<Price>	50	</Price>	<Count>	0	</Count>	</dish>
+<dish>	<menutype>	0	</menutype>	<Name>	Paratha	</Name>	<Price>	40	</Price>	<Count>	0	</Count>	</dish>
+<dish>	<menutype>	0	</menutype>	<Name>	Veg Kurma	</Name>	<Price>	20	</Price>	<Count>	0	</Count>	</dish>
+<dish>	<menutype>	0	</menutype>	<Name>	Gobi Fry	</Name>	<Price>	50	</Price>	<Count>	0	</Count>	</dish>
+<dish>	<menutype>	0	</menutype>	<Name>	"Kadai Vegetables	</Name>	<Price>	40	</Price>	<Count>	0	</Count>	</dish>
+<dish>	<menutype>	0	</menutype>	<Name>	Soup of The Day	</Name>	<Price>	40	</Price>	<Count>	0	</Count>	</dish>
+<dish>	<menutype>	0	</menutype>	<Name>	Fresh Juice	</Name>	<Price>	40	</Price>	<Count>	0	</Count>	</dish>
+<dish>	<menutype>	1	</menutype>	<Name>	Non Veg Meals	</Name>	<Price>	90	</Price>	<Count>	0	</Count>	</dish>
+<dish>	<menutype>	1	</menutype>	<Name>	Chapathi	</Name>	<Price>	80	</Price>	<Count>	0	</Count>	</dish>
+<dish>	<menutype>	1	</menutype>	<Name>	Mini Meals	</Name>	<Price>	90	</Price>	<Count>	0	</Count>	</dish>
+<dish>	<menutype>	1	</menutype>	<Name>	Paratha	</Name>	<Price>	100	</Price>	<Count>	0	</Count>	</dish>
+<dish>	<menutype>	1	</menutype>	<Name>	Chicken Masala	</Name>	<Price>	90	</Price>	<Count>	0	</Count>	</dish>
+<dish>	<menutype>	1	</menutype>	<Name>	Chicken 65	</Name>	<Price>	90	</Price>	<Count>	0	</Count>	</dish>
+<dish>	<menutype>	1	</menutype>	<Name>	Kadai Chicken	</Name>	<Price>	100	</Price>	<Count>	0	</Count>	</dish>
+<dish>	<menutype>	1	</menutype>	<Name>	"Soup of the Day	</Name>	<Price>	40	</Price>	<Count>	0	</Count>	</dish>
+<dish>	<menutype>	1	</menutype>	<Name>	Fresh Juice	</Name>	<Price>	40	</Price>	<Count>	0	</Count>	</dish>
+<dish>	<menutype>	2	</menutype>	<Name>	Protien Shake	</Name>	<Price>	140	</Price>	<Count>	0	</Count>	</dish>
+<dish>	<menutype>	2	</menutype>	<Name>	Egg White Omlet	</Name>	<Price>	40	</Price>	<Count>	0	</Count>	</dish>
+<dish>	<menutype>	2	</menutype>	<Name>	Oatmeal	</Name>	<Price>	40	</Price>	<Count>	0	</Count>	</dish>
+<dish>	<menutype>	2	</menutype>	<Name>	Sugar Free Ice Cream	</Name>	<Price>	50	</Price>	<Count>	0	</Count>	</dish>
+<dish>	<menutype>	2	</menutype>	<Name>	Fresh Juice	</Name>	<Price>	40	</Price>	<Count>	0	</Count>	</dish>
+<dish>	<menutype>	2	</menutype>	<Name>	Veg Sandwich	</Name>	<Price>	60	</Price>	<Count>	0	</Count>	</dish>
+<dish>	<menutype>	2	</menutype>	<Name>	Chicken Sandwich	</Name>	<Price>	80	</Price>	<Count>	0	</Count>	</dish>
+<dish>	<menutype>	2	</menutype>	<Name>	Veg Salad	</Name>	<Price>	90	</Price>	<Count>	0	</Count>	</dish>
+<dish>	<menutype>		</menutype>	<Name>	Chicken Salad	</Name>	<Price>	140	</Price>	<Count>	0	</Count>	</dish>
+</Menu>
