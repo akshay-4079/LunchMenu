@@ -93,7 +93,7 @@ namespace LunchMenu
             NVM.Clear();
             HealthyMenu = HM.ToArray();
             HM.Clear();
-
+            IM.Clear();
            
         }
 
