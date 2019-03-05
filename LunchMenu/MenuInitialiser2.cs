@@ -18,7 +18,7 @@ namespace LunchMenu
         public static Item2[] HealthyMenu { get; set; }
         public void ReadItems()
         {
-            XmlReader xmlReader = XmlReader.Create(@".\Menu.xml");
+            XmlReader xmlReader = XmlReader.Create(@"./Menu.xml");
             while (xmlReader.Read())
             {
 
