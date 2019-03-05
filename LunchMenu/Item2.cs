@@ -5,7 +5,11 @@ namespace LunchMenu
     public class Item2
     {
 
-
+        public  enum Name1{
+         Veg=0,
+         NonVeg=1,
+         Healthy=2
+         }
         public static Stack<Item2> menu1 = new Stack<Item2>();
     
         public string Name { get; set; }
