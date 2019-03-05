@@ -6,7 +6,7 @@ namespace LunchMenu
     public class Item
 
     {
-       
+
         public string Name { get; set; }
         public int Price { get; set; }
         public int Count { get; set; }
@@ -16,12 +16,14 @@ namespace LunchMenu
             item.Price = Price;
             item.Count = count;
         }
+        public string MenuName { get; set; }
         public Item()
         {
             Name = null;
             Price = 0;
             Count = 0;
         }
+
      
     }
   

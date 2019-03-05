@@ -10,19 +10,20 @@ namespace LunchMenu
     {
         public static void Main(string[] args)
         {
-            MenuInitialiser menu = new MenuInitialiser();
-            menu.MenuStart();
+            MenuInitialiser2 menu = new MenuInitialiser2();
+            menu.AddMenu();
+            menu.CreateMenu();
             ShowMenu();
         }
 
         private static void ShowMenu()
         {
             WriteLine("Non Veg Menu");
-            DisplayAll(MenuInitialiser.NonVegMenu);
+            DisplayAll(MenuInitialiser2.NonVegMenu);
             WriteLine("Veg Menu");
-            DisplayAll(MenuInitialiser.VegMenu);
+            DisplayAll(MenuInitialiser2.VegMenu);
             WriteLine("Healthy Menu");
-            DisplayAll(MenuInitialiser.HealthyMenu);
+            DisplayAll(MenuInitialiser2.HealthyMenu);
             DisplayMenu();
         }
 
@@ -40,19 +41,19 @@ namespace LunchMenu
       
             if (option == "n" || option == "N")
             {
-                DisplayAll(MenuInitialiser.NonVegMenu);
-                DishSelect(MenuInitialiser.NonVegMenu);
+                DisplayAll(MenuInitialiser2.NonVegMenu);
+                DishSelect(MenuInitialiser2.NonVegMenu);
 
             }
             if (option == "v" || option == "V")
             {
-                DisplayAll(MenuInitialiser.VegMenu);
-                DishSelect(MenuInitialiser.NonVegMenu);
+                DisplayAll(MenuInitialiser2.VegMenu);
+                DishSelect(MenuInitialiser2.NonVegMenu);
             }
             if (option == "h" || option == "H")
             {
-                DisplayAll(MenuInitialiser.HealthyMenu);
-                DishSelect(MenuInitialiser.NonVegMenu);
+                DisplayAll(MenuInitialiser2.HealthyMenu);
+                DishSelect(MenuInitialiser2.NonVegMenu);
             }
             else
              {
@@ -63,7 +64,7 @@ namespace LunchMenu
             }
         }
 
-        private static void DishSelect(Item[] items)
+        private static void DishSelect(Item2[] items)
         {
             WriteLine("Enter Blank at any time to end Order");
             string id;
@@ -76,7 +77,8 @@ namespace LunchMenu
             bool result1 = count.Any(x => !char.IsLetter(x));
             if (string.IsNullOrWhiteSpace(id) || string.IsNullOrWhiteSpace(count))
             {
-                EndOrder(MenuInitialiser.order);
+                EndOrder(MenuInitialiser2.order);
+
             }
 
             else if(result == true && result1==true)
@@ -84,15 +86,19 @@ namespace LunchMenu
 
                 int id1 = int.Parse(id);
                 int count1 = int.Parse(count);
-                Item item = new Item();
+
                 int count2 = 0;
                 for (int i = 0; i < items.Length; i++)
                         {
                             if (id1 == i)
                             {
                         count2 = 1;
-                                item.UpdateEntry(item, items[i].Name, items[i].Price, count1);
-                                MenuInitialiser.order.Add(item);
+                        Item2 item = new Item2();
+                        item.Name = items[i].Name;
+                        item.Count = count1;
+                        item.menu = items[i].menu;
+                        item.Price = items[i].Price;
+                        MenuInitialiser2.order.Add(item);
                         DishSelect(items);
                     }
             
@@ -113,9 +119,9 @@ namespace LunchMenu
 
 
 
-        private static void EndOrder(List<LunchMenu.Item> items)
+        private static void EndOrder(List<Item2> items)
         {
-            Item[] order = items.ToArray();
+            Item2[] order = items.ToArray();
             using (StreamWriter outputfile = File.CreateText("Bill.txt"))
             {
                 var t = new TablePrinter("Name","Count" ,"Price");
@@ -137,7 +143,7 @@ namespace LunchMenu
             }
         }
 
-        private static void DisplayAll( Item[] items)
+        private static void DisplayAll( Item2[] items)
         {
             var t = new TablePrinter("id", "Name", "Price");
           

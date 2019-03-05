@@ -38,6 +38,8 @@
     <Compile Include="MenuInitialiser.cs" />
     <Compile Include="TablePrinter.cs" />
     <Compile Include="Properties\TestFile.cs" />
+    <Compile Include="Item2.cs" />
+    <Compile Include="MenuInitialiser2.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
