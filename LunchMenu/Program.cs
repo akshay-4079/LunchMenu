@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using static System.Console;
 
 namespace LunchMenu
 {
@@ -10,22 +11,17 @@ namespace LunchMenu
         public static void Main(string[] args)
         {
             MenuInitialiser menu = new MenuInitialiser();
-            menu.VegMenuStart();
-            menu.NonVegMenuStart();
-            menu.HealthyMenuStart();
-           
+            menu.MenuStart();
             ShowMenu();
-
-      
         }
 
         private static void ShowMenu()
         {
-            Console.WriteLine("Non Veg Menu");
+            WriteLine("Non Veg Menu");
             DisplayAll(MenuInitialiser.NonVegMenu);
-            Console.WriteLine("Veg Menu");
+            WriteLine("Veg Menu");
             DisplayAll(MenuInitialiser.VegMenu);
-            Console.WriteLine("Healthy Menu");
+            WriteLine("Healthy Menu");
             DisplayAll(MenuInitialiser.HealthyMenu);
             DisplayMenu();
         }
@@ -33,15 +29,15 @@ namespace LunchMenu
         private static void DisplayMenu()
         {
             string option;
-            Console.WriteLine("Choose N for Non Veg; V for Vegetarian; H for Healthy");
-            option = Console.ReadLine();
+            WriteLine("Choose N for Non Veg; V for Vegetarian; H for Healthy");
+            option = ReadLine();
             SelectOption(option);
         }
 
 
         private static void SelectOption(string option)
         {
-            Console.WriteLine("Jump1");
+      
             if (option == "n" || option == "N")
             {
                 DisplayAll(MenuInitialiser.NonVegMenu);
@@ -60,7 +56,8 @@ namespace LunchMenu
             }
             else
              {
-                Console.WriteLine("Enter Valid Response");
+                WriteLine("Entered Other Func");
+                WriteLine("Enter Valid Response");
                 DisplayMenu();
 
             }
@@ -68,61 +65,48 @@ namespace LunchMenu
 
         private static void DishSelect(Item[] items)
         {
-            Console.WriteLine("Enter Blank at any time to end Order");
+            WriteLine("Enter Blank at any time to end Order");
             string id;
             string count;
-            Console.WriteLine("Enter The Id of the order");
-            id = Console.ReadLine();
-            Console.WriteLine("How Many Portions Do you require");
-            count = Console.ReadLine();
+            WriteLine("Enter The Id of the order");
+            id = ReadLine();
+            WriteLine("How Many Portions Do you require");
+            count = ReadLine();
             bool result = id.Any(x => !char.IsLetter(x));
             bool result1 = count.Any(x => !char.IsLetter(x));
-            if (string.IsNullOrWhiteSpace(id))
+            if (string.IsNullOrWhiteSpace(id) || string.IsNullOrWhiteSpace(count))
             {
                 EndOrder(MenuInitialiser.order);
             }
 
-            else if (result == true && result1==true)
+            else if(result == true && result1==true)
             {
 
                 int id1 = int.Parse(id);
-                if (id1 >= 0 && id1 < 9)
-                {
-
-                    int count1 = int.Parse(count);
-                    if (count1 >= 0 && count1 < 9)
-                    {
-                        Item item = new Item();
-                        for (int i = 0; i < items.Length; i++)
+                int count1 = int.Parse(count);
+                Item item = new Item();
+                int count2 = 0;
+                for (int i = 0; i < items.Length; i++)
                         {
                             if (id1 == i)
                             {
+                        count2 = 1;
                                 item.UpdateEntry(item, items[i].Name, items[i].Price, count1);
                                 MenuInitialiser.order.Add(item);
-                            }
-                        }
-
-
-                    }
-                    if (string.IsNullOrWhiteSpace(count))
-                    {
-                        EndOrder(MenuInitialiser.order);
-                    }
-                    else
-                    {
                         DishSelect(items);
                     }
-
-
+            
                 }
-                else
+                if (count2 == 0)
                 {
+                    Console.WriteLine("No Match");
                     DishSelect(items);
                 }
+
             }
             else
             {
-                Console.WriteLine("Enter Proper Id Please");
+                WriteLine("Enter Proper Id Please");
                 DishSelect(items);
             }
         }
@@ -142,9 +126,9 @@ namespace LunchMenu
 
                     t.AddRow( order[i].Name,order[i].Count, order[i].Price);
                     temp = order[i].Count * order[i].Price;
-                    Console.WriteLine(temp);
+                    WriteLine(temp);
                     total = total+temp;
-                    Console.WriteLine(total);
+                    WriteLine(total);
                 }
                 t.Print1(outputfile);
                 outputfile.WriteLine($"Total Bill Amount is {total}");
