@@ -43,16 +43,6 @@ namespace LunchMenu
                 }
             }
         }
-    
-   
-
-
-
-
-
-
-
-
 
         //    public void AddMenu()
         //{
@@ -96,12 +86,12 @@ namespace LunchMenu
 
         public void CreateMenu()
         {
-            int count=0;
+            int count = 0;
             while (menu1.Count > 0)
             {
                 Item2 item = new Item2();
                 item = menu1.Pop();
-                if (item.menu == "Veg" && item.Count==0)
+                if (item.menu == "Veg" && item.Count == 0)
                 {
                     VM.Add(item);
                 }
@@ -109,7 +99,7 @@ namespace LunchMenu
                 {
                     NVM.Add(item);
                 }
-                else if(item.menu== "Healthy" && item.Count == 0)
+                else if (item.menu == "Healthy" && item.Count == 0)
                 {
                     HM.Add(item);
                 }
@@ -119,24 +109,39 @@ namespace LunchMenu
                     IM.Add(item);
                 }
             }
+            CheckForBogus(count);
+            ConvertToArray();
+            ClearMemory();
+        }
+
+        private static void CheckForBogus(int count)
+        {
             if (count > 0)
             {
                 Console.WriteLine($"There are {count} bogus entries");
-                foreach(Item2 element in IM)
+                foreach (Item2 element in IM)
                 {
                     Console.WriteLine(element.Name);
                 }
 
             }
-            VegMenu = VM.ToArray();
-            VM.Clear();
-            NonVegMenu = NVM.ToArray();
-            NVM.Clear();
-            HealthyMenu = HM.ToArray();
-            HM.Clear();
-            IM.Clear();
-           
         }
 
+        private static void ConvertToArray()
+        {
+            VegMenu = VM.ToArray();
+
+            NonVegMenu = NVM.ToArray();
+
+            HealthyMenu = HM.ToArray();
+        }
+
+        private static void ClearMemory()
+        {
+            HM.Clear();
+            IM.Clear();
+            VM.Clear();
+            NVM.Clear();
+        }
     }
 }

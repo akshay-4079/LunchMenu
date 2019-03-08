@@ -122,18 +122,23 @@ namespace LunchMenu
         private static void EndOrder(List<Item2> items)
         {
             Item2[] order = items.ToArray();
+            PrintBill(order);
+        }
+
+        private static void PrintBill(Item2[] order)
+        {
             using (StreamWriter outputfile = File.CreateText("Bill.txt"))
             {
-                var t = new TablePrinter("Name","Count" ,"Price");
+                var t = new TablePrinter("Name", "Count", "Price");
                 int total = 0;
                 int temp;
                 for (int i = 0; i < order.Length; i++)
                 {
 
-                    t.AddRow( order[i].Name,order[i].Count, order[i].Price);
+                    t.AddRow(order[i].Name, order[i].Count, order[i].Price);
                     temp = order[i].Count * order[i].Price;
                     WriteLine(temp);
-                    total = total+temp;
+                    total = total + temp;
                     WriteLine(total);
                 }
                 t.Print1(outputfile);
